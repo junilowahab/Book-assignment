@@ -55,23 +55,16 @@ shelf.addEventListener('submit', (e) => {
 
     //Creating elements to display books
     const libraryHall = document.querySelector('.library');
-    const display = document.createElement('section');
+    const display = document.querySelector('#display-container');
 
-    //Displays the element in the DOM
-    function createDisplayArea(){
-        display.classList.add('display');
-
-        //Checks if a display element is already appended so as to not add more
-        if(libraryHall.children.length === 1){
-            libraryHall.appendChild(display);
-        }
-    }
-    createDisplayArea();
+    //Adds style to the display element
+    display.classList.add('display');
 
     function displayBookInformation(){
-            const displayBox = document.createElement('div');
+            var displayBox = document.createElement('div');
             displayBox.classList.add('displayBox')
             display.appendChild(displayBox);
+            console.log('add nau')
     }
     displayBookInformation();
 });
