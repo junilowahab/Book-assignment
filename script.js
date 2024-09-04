@@ -64,13 +64,34 @@ shelf.addEventListener('submit', (e) => {
         displayBox.classList.add('displayBox');
         display.appendChild(displayBox);
 
+        //Created palces where the specific data will be displayed
+        var titleContainer = document.createElement('h1');
+        var authorContainer = document.createElement('h3');
+        var pagesContainer = document.createElement('p');
+        var readContainer = document.createElement('p');
+        
+        //Added delete button to remove a display box if needed
+        var deleteButton = document.createElement('button')
+
+        displayBox.appendChild(titleContainer);
+        displayBox.appendChild(authorContainer);
+        displayBox.appendChild(pagesContainer);
+        displayBox.appendChild(readContainer);
+        displayBox.appendChild(deleteButton);
+
+        deleteButton.classList.add('deleteButton')
+
         //Create array of display children elements to identify it with the index of the myLibrary array
         let displayBoxArray = Array.from(display.children);
 
         //Create loop to match displayBox information with myLibrary array
         for(let i = 0; i <= myLibrary.length; i++){
             if(displayBoxArray[i] === myLibrary[i]){
-                console.log(myLibrary[book].title);
+                titleContainer.innerText = myLibrary[book].title;
+                authorContainer.innerText = myLibrary[book].author;
+                pagesContainer.innerText = myLibrary[book].pages;
+                readContainer.innerText = myLibrary[book].beenRead;
+                deleteButton.innerText = 'Delete'
             }
         }
     }

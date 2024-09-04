@@ -127,4 +127,16 @@ button:hover{
     box-shadow: 1px 1px 10px rgb(73, 40, 21) inset;
     border: 5px solid rgb(59, 34, 22);
     border-radius: 15px;
+
+    padding: 10px;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    justify-items: center;
+}
+
+.deleteButton{
+    background-color: rgb(126, 41, 19);
+    grid-column: span 2;
 }
