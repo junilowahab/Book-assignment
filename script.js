@@ -39,8 +39,8 @@ shelf.addEventListener('submit', (e) => {
     checkRadio();
 
     //Creates new book object from book data
+    let book;
     function createNewBook(){
-        let book;
         if(myLibrary.length >= 0){
             //Numbers the book objects appropriately
             book = 'book' + '' + myLibrary.length;
@@ -54,17 +54,25 @@ shelf.addEventListener('submit', (e) => {
     e.preventDefault();
 
     //Creating elements to display books
-    const libraryHall = document.querySelector('.library');
     const display = document.querySelector('#display-container');
 
     //Adds style to the display element
     display.classList.add('display');
 
     function displayBookInformation(){
-            var displayBox = document.createElement('div');
-            displayBox.classList.add('displayBox')
-            display.appendChild(displayBox);
-            console.log('add nau')
+        var displayBox = document.createElement('div');
+        displayBox.classList.add('displayBox');
+        display.appendChild(displayBox);
+
+        //Create array of display children elements to identify it with the index of the myLibrary array
+        let displayBoxArray = Array.from(display.children);
+
+        //Create loop to match displayBox information with myLibrary array
+        for(let i = 0; i <= myLibrary.length; i++){
+            if(displayBoxArray[i] === myLibrary[i]){
+                console.log(myLibrary[book].title);
+            }
+        }
     }
     displayBookInformation();
 });
